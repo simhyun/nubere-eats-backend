@@ -82,7 +82,129 @@ npm i joi
 #3.5 Mapped Types (12:23)
 entity와 dto를 통합
 
+#4.1 User Model (07:07)
 
-#3.6 Optional Types and Columns (08:42
-할차례
+nest g mo users
+nest g mo common
+
+-------------------------------------------------------
+# User structure start
+-------------------------------------------------------
+
+## User Model:
+
+- id
+- createdAt
+- updatedAt
+
+- email
+- password
+- role(client|owner|delivery)
+
+## User CRUD:
+
+- Create Account
+- Log In
+- See Profile
+- Edit Profile
+- Verify Email
+
+-------------------------------------------------------
+# User structure end
+-------------------------------------------------------
+
+#4.7 Hashing Passwords (09:02)
+패스워드를 해쉬화
+npm i bcrypt
+npm i @types/bcrypt --dev-only
+[참고] https://typeorm.io/#/listeners-and-subscribers
+
+#5.0 Introduction to Authentication (02:00)
+
+토큰 만드는 방법 두가지
+
+1. 수작업
+
+> http://npmjs.com/package/jsonwebtoken
+- npm install jsonwebtoken
+- npm i @types/jsonwebtoken --only-dev
+
+> https://randomkeygen.com/
+- 7IBKsYrZVz6iMcA0ozD6jbMAUelKPYo1
+
+2. nestjs/passports를 적용시킨 후 passport-jwt과 nestjs/jws를 활용하는 방법
+
+#5.2 JWT and Modules (06:05)
+토큰의 내용이 무엇인지 확인하는 사이트
+https://jwt.io/
+
+nest g mo jwt
+nest g s jwt
+
+#5.9 AuthGuard (08:22)
+[참고] http://docs.netjs.com/guards
+nest g mo auth
+
+#5.11 Recap (07:35)
+
+[authentication 작동 원리]
+header의 token 보내기(http) > middleware(헤더를 통해 jwtService.verify() 사용, 인증) > id를 통해 user를 서치 > userService는 typeOrm의 findOne를 이용해 user 검색 > user를 request object를 통해 전송
+
+[middleware 작동 원리]
+apollo server의 context를 통해 user를 서치 > authorization guard > resolver > decorator(conext를 graphql conext로 바꿈)
+
+
+#6.0 Verification Entity (06:54)
+npm i uuid
+
+
+#6.5 Mailgun Setup (07:12)
+https://www.mailgun.com/
+3개월에 5000건씩 무료
+계정명 : youksimhyun@naver.com
+[참고] fake sms : receive=smss.com
+
+#6.6 Mail Module Setup (08:34)
+nestjs mailer 대체 가능
+(추후 사용자 많아질 시 사용 가능)
+
+nest g mo mail
+
+
+#6.7 Mailgun API (13:25)
+npm i got
+[설명] request
+npm i form-data
+[설명] form 만들기
+
+#7.0 Setting Up Tests (08:26)
+테스트
+npm run test:watch
+
+#8.0 JWT Service Test Setup (05:20)
+npm run test:e2e
+
+
+--------------------------
+Restaurant Model
+--------------------------
+name
+category
+address
+coverImage
+
+Edit Restaurant
+Delete Restaurant
+See Categories
+See Restaurants by Category (pagination)
+See Restaurants (pagination)
+See Restaurant
+Create Dish
+Edit Dish
+Delete Dish
+
+#10.11 Delete Restaurant (07:10)
+할 차례
+
+
 ```
