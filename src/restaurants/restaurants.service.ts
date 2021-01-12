@@ -237,7 +237,7 @@ export class RestaurantService {
         skip: (page - 1) * 25,
         take: 25,
       });
-      return {
+      return { 
         ok: true,
         restaurants,
         totalResults,
