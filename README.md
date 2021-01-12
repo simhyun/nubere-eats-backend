@@ -27,6 +27,7 @@ nest g application
  - git add .
  - git commit -m "first"
  - git push origin master
+ - git push origin +master (강제 푸쉬)
 
 
 ## 1.0 Apollo Server Setup
